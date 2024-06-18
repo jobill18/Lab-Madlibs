@@ -52,3 +52,13 @@ app.get("/greet", (req, res) => {
   const compliment = sample(COMPLIMENTS);
   res.render("greet.html.njk", { name: name, compliment: compliment });
 });
+
+app.get("/game", (req, res) => {
+  if (req.query.play) {
+    res.render("game.html.njk");
+  } else {
+    res.render("goodbye.html.njk");
+  }
+});
+
+app.get("/madlib", (req, res) => {});
